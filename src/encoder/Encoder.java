@@ -15,7 +15,7 @@ public class Encoder {
     HashMap<Byte, Double[]> workingSegment = new HashMap<>();  // working segment with distributed characters
     Double rightBorder;                                        // global working segment border
     Double leftBorder;
-    Double eps = 1E-14;
+    Double eps;
     static final Logger logger = Logger.getLogger(Encoder.class.getName());
     
     public boolean setConfig(String cfgPath){
