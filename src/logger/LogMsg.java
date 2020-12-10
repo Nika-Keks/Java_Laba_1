@@ -1,0 +1,22 @@
+package logger;
+
+public enum LogMsg {
+
+
+    SUCCESS("SUCCESS"),
+    DECODING_DATA_READING_FAILURE("DECODING_DATA_READING_FAILURE"),
+    NO_CONFIG_FILE("NO_CONFIG_FILE"),
+    ERROR_FILE_READING("ERROR_FILE_READING"),
+    ERROR_FILE_WRITING("ERROR_FILE_WRITING"),
+    FILE_NOT_FOUND("FILE_NOT_FOUND"),
+    INVALID_CONFIG_DATA("INVALID_CONFIG_DATA"),
+    INVALID_ARGUMENTS("INVALID_ARGUMENTS"),
+    START_PARS("START_PARS");
+
+    public final String msg;
+
+    LogMsg(String errMsg) {
+        this.msg = errMsg;
+    }
+}
+

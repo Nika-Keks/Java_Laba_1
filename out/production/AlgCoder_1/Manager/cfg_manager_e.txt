@@ -1,0 +1,4 @@
+cfgReader=src\rider_writer\reader_e_cfg.txt;
+cfgWriter=src\rider_writer\writer_e_cfg.txt;
+cfgExecutor=src\encoder\encoder_cfg.txt;
+modeExecutor=encodeMode;

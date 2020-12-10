@@ -1,0 +1,4 @@
+cfgReader=src\rider_writer\reader_d_cfg.txt;
+cfgWriter=src\rider_writer\writer_d_cfg.txt;
+cfgExeecutor= ;
+modeExecutor=decodeMode;
