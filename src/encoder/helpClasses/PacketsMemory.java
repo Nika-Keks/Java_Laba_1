@@ -1,14 +1,16 @@
 package encoder.helpClasses;
 
-import logger.Logger;
+import logger.LogMsg;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.logging.Logger;
 
 public class PacketsMemory{
     ArrayDeque<byte[]> allData = new ArrayDeque<>();
     ArrayDeque<byte[]> decodeData = new ArrayDeque<>();
+    static final Logger logger = Logger.getLogger(PacketsMemory.class.getName());
 
     public void addData(byte[] nextData){
         if (allData.size() == 0 || allData.peekFirst().length >= 4) {
@@ -64,7 +66,7 @@ public class PacketsMemory{
             pack = new byte[packSize];
         }
         catch(NegativeArraySizeException ex){
-            Logger.log(ex.getMessage());
+            logger.severe(LogMsg.DECODING_DATA_READING_FAILURE.msg);
             return null;
         }
 

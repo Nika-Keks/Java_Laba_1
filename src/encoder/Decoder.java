@@ -2,10 +2,10 @@ package encoder;
 
 import encoder.helpClasses.ByteDouPair;
 import encoder.helpClasses.PacketsMemory;
-import logger.Errors;
-import logger.Logger;
+import logger.LogMsg;
 
 import java.nio.ByteBuffer;
+import java.util.logging.Logger;
 
 public class Decoder {
     final int doubleSize = 8;
@@ -15,7 +15,7 @@ public class Decoder {
     Double eps;
     ByteDouPair[] workingSegment;
     PacketsMemory packetsMemory = new PacketsMemory();
-
+    static final Logger logger = Logger.getLogger(Decoder.class.getName());
 
     public byte[] decode(byte[] encodeData){
         packetsMemory.addData(encodeData);
@@ -51,7 +51,7 @@ public class Decoder {
             textLen = encodeData.getInt();
             return true;
         }catch (Throwable ex){
-            Logger.log(Errors.DECODING_DATA_READING_FAILURE);
+            logger.severe(LogMsg.DECODING_DATA_READING_FAILURE.msg);
         }
         return false;
     }
