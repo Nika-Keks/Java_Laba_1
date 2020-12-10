@@ -20,7 +20,7 @@ public class Manager {
     Writer writer;
     Encoder encoder;
     Decoder decoder;
-    Logger logger = Logger.getLogger(Manager.class.getName());
+    static final Logger logger = Logger.getLogger(Manager.class.getName());
 
     public boolean setConfig(String cfgPath){
         HashMap<String ,String> variableMap = SyntacticalAnalyser.getValidExpr(cfgPath,
